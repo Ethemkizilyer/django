@@ -11,7 +11,7 @@ class Bakar(models.Model):
     is_active =models.BooleanField(default=True)
     avatar= models.ImageField(blank=True,null=True,upload_to="student")
     files= models.FileField(blank=True,null=True,upload_to="student_files")
-    register_date=models.DateTimeField()
+    register_date=models.DateTimeField(auto_now_add=True)
     update_date=models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -22,5 +22,5 @@ class Bakar(models.Model):
         ordering = ('number',)
         verbose_name= 'Öğrenci'
         verbose_name_plural = 'Öğrenciler'
-        db_table = 'bakarlar'
+        # db_table = 'bakarlar'
         
