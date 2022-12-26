@@ -3,7 +3,23 @@ from django.db import models
 # Create your models here.
 
 class Bakar(models.Model):
-    path_name = models.CharField(max_length=50)
+    first_name= models.CharField(max_length=30,blank=True)
+    last_name= models.CharField(max_length=30)
+    number= models.PositiveSmallIntegerField(blank=True,null=True)
+    about=models.TextField(blank=True)
+    email= models.EmailField(blank=True)
+    is_active =models.BooleanField(default=True)
+    avatar= models.ImageField(blank=True,null=True,upload_to="student")
+    register_date=models.DateTimeField()
+    update_date=models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.path_name}"
+        return f"{self.number}-{self.first_name}"
+    
+    
+    class Meta:
+        ordering = ('number',)
+        verbose_name= 'Öğrenci'
+        verbose_name_plural = 'Öğrenciler'
+        db_table = 'bakarlar'
+        
