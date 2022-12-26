@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bakar',
     'relation',
     'student_api',
+    'rest_framework', 
 ]
 
 MIDDLEWARE = [
