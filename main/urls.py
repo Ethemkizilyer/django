@@ -18,11 +18,13 @@ from django.urls import path,include
 from bakar.views import home
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import real_home
 
  
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",home),
+    # path("",home),
+    path("",real_home),
     path("api/",include("student_api.urls")),
 ]
 
